@@ -988,13 +988,13 @@
         <div class="q-divider"></div>
         <span class="q-of">Question 1 of 6</span>
       </div>
-      <div class="q-text">In the dataset, which of the following columns is best described as a categorical variable?</div>
-      <div class="q-meta">Easy &middot; Data Types</div>
+      <div class="q-text">During the 2009 H1N1 swine flu pandemic, global health organisations were closely monitoring life expectancy trends across regions. A researcher analysed the dataset for that year and grouped countries by region to compare averages. Which region recorded the lowest average life expectancy in 2009?</div>
+      <div class="q-meta">Easy &middot; Regional Analysis</div>
       <div class="options">
-        <label class="option" onclick="pickOption(0,'A',this)"><input type="radio" name="q0" value="A"><span class="opt-key">A</span><span class="opt-text">Life_expectancy</span></label>
-        <label class="option" onclick="pickOption(0,'B',this)"><input type="radio" name="q0" value="B"><span class="opt-key">B</span><span class="opt-text">GDP_per_capita</span></label>
-        <label class="option" onclick="pickOption(0,'C',this)"><input type="radio" name="q0" value="C"><span class="opt-key">C</span><span class="opt-text">Economy_status_Developed</span></label>
-        <label class="option" onclick="pickOption(0,'D',this)"><input type="radio" name="q0" value="D"><span class="opt-key">D</span><span class="opt-text">Infant_deaths</span></label>
+        <label class="option" onclick="pickOption(0,'A',this)"><input type="radio" name="q0" value="A"><span class="opt-key">A</span><span class="opt-text">Oceania (70.0 years)</span></label>
+        <label class="option" onclick="pickOption(0,'B',this)"><input type="radio" name="q0" value="B"><span class="opt-key">B</span><span class="opt-text">Asia (70.1 years)</span></label>
+        <label class="option" onclick="pickOption(0,'C',this)"><input type="radio" name="q0" value="C"><span class="opt-key">C</span><span class="opt-text">Africa (58.6 years)</span></label>
+        <label class="option" onclick="pickOption(0,'D',this)"><input type="radio" name="q0" value="D"><span class="opt-key">D</span><span class="opt-text">Middle East (74.4 years)</span></label>
       </div>
     </div>
 
@@ -1005,13 +1005,13 @@
         <div class="q-divider"></div>
         <span class="q-of">Question 2 of 6</span>
       </div>
-      <div class="q-text">A student calculates the average life expectancy across all countries in 2015 and gets 69.4 years. A classmate says the median would be a better measure. When would the classmate be right?</div>
-      <div class="q-meta">Easy &middot; Mean vs Median</div>
+      <div class="q-text">Before presenting to stakeholders, you want to report the typical life expectancy across all countries using the most recent year available in the dataset. You choose the median over the mean to avoid being skewed by outliers. What value do you get?</div>
+      <div class="q-meta">Easy &middot; Descriptive Statistics</div>
       <div class="options">
-        <label class="option" onclick="pickOption(1,'A',this)"><input type="radio" name="q1" value="A"><span class="opt-key">A</span><span class="opt-text">When the dataset contains more than 100 countries</span></label>
-        <label class="option" onclick="pickOption(1,'B',this)"><input type="radio" name="q1" value="B"><span class="opt-key">B</span><span class="opt-text">When some countries have very high or very low life expectancy, pulling the average away from the typical value</span></label>
-        <label class="option" onclick="pickOption(1,'C',this)"><input type="radio" name="q1" value="C"><span class="opt-key">C</span><span class="opt-text">When the mean and median produce noticeably different values</span></label>
-        <label class="option" onclick="pickOption(1,'D',this)"><input type="radio" name="q1" value="D"><span class="opt-key">D</span><span class="opt-text">When life expectancy data is collected over multiple years rather than a single year</span></label>
+        <label class="option" onclick="pickOption(1,'A',this)"><input type="radio" name="q1" value="A"><span class="opt-key">A</span><span class="opt-text">68.5 years</span></label>
+        <label class="option" onclick="pickOption(1,'B',this)"><input type="radio" name="q1" value="B"><span class="opt-key">B</span><span class="opt-text">71.5 years</span></label>
+        <label class="option" onclick="pickOption(1,'C',this)"><input type="radio" name="q1" value="C"><span class="opt-key">C</span><span class="opt-text">73.0 years</span></label>
+        <label class="option" onclick="pickOption(1,'D',this)"><input type="radio" name="q1" value="D"><span class="opt-key">D</span><span class="opt-text">76.2 years</span></label>
       </div>
     </div>
 
@@ -1204,17 +1204,17 @@
 </div><!-- /shell -->
 
 <script>
-  const MCQ_ANSWERS = ['C','B','C','C','B'];
+  const MCQ_ANSWERS = ['C','C','C','C','B'];
   const EXPLANATIONS = [
     {
-      topic: 'Data Types',
-      explain: 'Economy_status_Developed takes only two values — 0 (developing) or 1 (developed) — making it a binary categorical variable that assigns each country to a group rather than measuring a quantity. Life_expectancy, GDP_per_capita, and Infant_deaths are all continuous numeric measures that can take a wide range of values.',
-      concept: 'Categorical variable — values represent distinct groups or categories (e.g. 0/1, yes/no, region names). Continuous variable — can take any numeric value within a range.'
+      topic: 'Regional Analysis',
+      explain: 'Grouping the 2009 data by region and calculating the mean life expectancy shows Africa at 58.6 years — far below the next lowest region (Oceania at 70.0 years). This reflects the compounding burden of disease, conflict, and limited healthcare infrastructure in many African countries, which also made the region particularly vulnerable during the H1N1 pandemic.',
+      concept: 'Use GROUP BY + mean to compare a numeric measure across categories. Always filter to the relevant time period before aggregating.'
     },
     {
-      topic: 'Mean vs Median',
-      explain: 'The mean is sensitive to extreme values. In the 2015 dataset, life expectancy ranges from ~51 years (Sierra Leone) to ~83.8 years (Japan) — these extremes can pull the mean away from the value that best represents the typical country. The median, being the middle value when sorted, is unaffected by how extreme the outliers are.',
-      concept: 'Use the median when data is skewed or contains outliers. Use the mean when data is roughly symmetrical with no extreme values.'
+      topic: 'Descriptive Statistics',
+      explain: 'Filtering to 2015 (the most recent year) and computing the median gives 73.0 years. The mean for the same year is 71.5 years — lower because a handful of countries with very short life expectancies (e.g. Central African Republic at 50.9 years) pull the average down. The median is unaffected by these extremes, making it the better measure of the typical country.',
+      concept: 'The median is more robust than the mean when data contains outliers. A gap between mean and median signals skewness in the distribution.'
     },
     {
       topic: 'Sampling Bias',
